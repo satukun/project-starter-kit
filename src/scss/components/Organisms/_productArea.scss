@@ -1,0 +1,138 @@
+.productArea {
+  background: $bg-cream;
+  padding: 100px 0;
+
+  @include mq {
+    padding: 50px 0;
+  }
+
+  > .title {
+    text-align: center;
+
+    @include mq {
+      width: 151px;
+      margin: 0 auto;
+    }
+  }
+
+  > .button {
+    display: block;
+    margin-top: 60px;
+    text-align: center;
+
+    @include mq {
+      max-width: 385px;
+      padding: 0 20px;
+      margin: 30px auto 0;
+    }
+  }
+}
+
+.productPhotos {
+  position: relative;
+  width: $inner-width;
+  margin: 44px auto 0;
+
+  @include mq {
+    width: 100%;
+    padding-left: 20px;
+    margin-top: 25px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    z-index: 1;
+    width: 100vw;
+    height: 450px;
+    background: $bg-cream;
+
+    @include mq {
+      content: none;
+    }
+  }
+
+  .item {
+    margin-right: 20px;
+
+    @include mq {
+      width: 300px;
+    }
+  }
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-arrow {
+    cursor: pointer;
+    position: absolute;
+    right: 46px;
+    bottom: -60px;
+    z-index: 2;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent
+      url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_carousel_arrow.webp")
+      no-repeat center/contain;
+    border: none;
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &.slick-next {
+      right: 0;
+      transform: rotateZ(180deg);
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    right: 106px;
+    bottom: -46px;
+    display: flex;
+    gap: 8px;
+    margin-top: 35px;
+
+    @include mq {
+      position: initial;
+      margin-top: 15px;
+    }
+
+    > li {
+      > button {
+        cursor: pointer;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        text-indent: 200%;
+        white-space: nowrap;
+        overflow: hidden;
+
+        @include mq {
+          width: 8px;
+          height: 8px;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      &.slick-active {
+        > button {
+          background: $accent-red;
+        }
+      }
+    }
+  }
+}

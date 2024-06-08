@@ -1,0 +1,83 @@
+.accordionButton {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  background: $white;
+  border: 2px solid currentColor;
+  box-shadow: 0 4px 0 currentColor;
+  border-radius: 25px;
+  font-size: 1.8rem;
+  color: $accent-red;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+
+  @include mq {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0 3px 0 currentColor;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 26px;
+    bottom: 0;
+    display: block;
+    width: 2px;
+    height: 16px;
+    margin: auto 0;
+    background: currentColor;
+    transition: all 0.2s;
+
+    @include mq {
+      right: 16px;
+      height: 14px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 19px;
+    bottom: 0;
+    display: block;
+    width: 16px;
+    height: 2px;
+    margin: auto 0;
+    background: currentColor;
+    transition: all 0.2s;
+
+    @include mq {
+      right: 10px;
+      width: 14px;
+    }
+  }
+
+  &.is-open {
+    &::before {
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      opacity: 0;
+      transform: rotate(180deg);
+    }
+  }
+
+  @include mq(lg) {
+    transition: background 0.2s;
+
+    &:hover {
+      background: $button-white-hover;
+    }
+  }
+}

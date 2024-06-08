@@ -1,0 +1,91 @@
+.showroomContainer {
+  max-width: $inner-width;
+  height: 553px;
+  padding: 60px;
+  margin: 80px auto 0;
+  background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_showroom.webp")
+    no-repeat center/contain;
+  text-align: center;
+
+  @include mq {
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - 40px);
+    height: auto;
+    max-height: 680px;
+    padding: 38px 20px 0;
+    margin-top: 40px;
+    background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_showroom.webp")
+      no-repeat center/cover;
+    border-radius: 10px;
+    border: 2px solid $black;
+    white-space: nowrap;
+  }
+
+  > .subtitle {
+    @include mq {
+      width: 120px;
+      margin: 0 auto;
+    }
+  }
+
+  > .title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: $accent-red;
+    letter-spacing: 0.04em;
+    line-height: math.div(52, 36);
+
+    @include mq {
+      margin-top: 6px;
+      font-size: 2.4rem;
+    }
+  }
+
+  > .text {
+    margin-top: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.1em;
+
+    @include mq {
+      margin-top: 8px;
+      font-size: 1.5rem;
+      line-height: math.div(52, 30);
+      letter-spacing: 0.08em;
+    }
+  }
+
+  > .button {
+    display: block;
+    margin-top: 24px;
+
+    @include mq {
+      margin-top: 16px;
+    }
+  }
+
+  > .note {
+    margin-top: 22px;
+    line-height: 2;
+    letter-spacing: 0.1em;
+
+    @include mq {
+      margin-top: 14px;
+      font-size: 1.4rem;
+      line-height: math.div(48, 28);
+    }
+  }
+
+  > .image {
+    @include mq(lg) {
+      display: none;
+    }
+
+    @include mq {
+      width: calc(100% + 40px);
+      margin: 21px 0 -1px -20px;
+    }
+  }
+}

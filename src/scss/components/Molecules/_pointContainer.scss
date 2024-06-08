@@ -1,0 +1,708 @@
+.pointContainer {
+  padding: 90px 58px 60px;
+  border: 2px solid $black;
+  border-radius: 12px;
+
+  @include mq {
+    padding: 78px 18px 30px;
+  }
+
+  &.-point01 {
+    background: $white
+      url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_point_01.svg")
+      no-repeat left 13px top -2px;
+
+    @include mq {
+      background-size: 152px auto;
+      background-position: center top 40px;
+    }
+  }
+
+  &.-point02 {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 46px 154px;
+    gap: 24px 45px;
+    background: $white
+      url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_point_02.svg")
+      no-repeat left 13px top -2px;
+
+    @include mq {
+      display: block;
+      padding-bottom: 150px;
+      background-size: 152px auto;
+      background-position: center top 40px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 202px;
+      bottom: 0;
+      width: 183px;
+      height: 138px;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/image_point02_illust.webp")
+        no-repeat center/contain;
+
+      @include mq {
+        left: 0;
+        right: 0;
+        width: 189px;
+        height: 134px;
+        margin: 0 auto;
+      }
+    }
+
+    > .title {
+      order: 1;
+    }
+
+    > .text {
+      order: 3;
+      margin-top: 0;
+
+      @include mq {
+        margin-top: 16px;
+      }
+    }
+
+    > .image {
+      order: 2;
+
+      @include mq {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  &.-point03 {
+    background: $white
+      url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_point_03.svg")
+      no-repeat left 13px top -2px;
+
+    @include mq {
+      background-size: 152px auto;
+      background-position: center top 40px;
+
+      > .title {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &.-point04 {
+    display: grid;
+    grid-template-columns: 1fr 404px;
+    grid-template-rows: 92px 1fr;
+    gap: 28px 0;
+    background: $white
+      url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_point_04.svg")
+      no-repeat left 13px top -2px;
+
+    @include mq {
+      display: block;
+      background-size: 152px auto;
+      background-position: center top 40px;
+    }
+
+    > .title {
+      order: 1;
+    }
+
+    > .image {
+      position: relative;
+      top: -30px;
+      order: 2;
+
+      @include mq {
+        position: initial;
+        width: 265px;
+        margin: 10px auto 0;
+      }
+    }
+  }
+
+  &.-point05 {
+    background: $white
+      url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_point_05.svg")
+      no-repeat left 13px top -2px;
+
+    @include mq {
+      background-size: 152px auto;
+      background-position: center top 40px;
+      overflow: hidden;
+    }
+  }
+
+  &.-point06 {
+    position: relative;
+    background: $white
+      url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_point_06.svg")
+      no-repeat left 13px top -2px;
+
+    @include mq {
+      padding-bottom: 330px;
+      background-size: 152px auto;
+      background-position: center top 40px;
+    }
+
+    > .text {
+      position: absolute;
+      top: 76px;
+      right: 60px;
+      margin-top: 0;
+      text-align: right;
+
+      @include mq {
+        top: auto;
+        bottom: 225px;
+        right: auto;
+        width: calc(100% - 40px);
+        text-align: center;
+        letter-spacing: 0.16em;
+      }
+    }
+  }
+
+  > .title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: math.div(46, 32);
+    letter-spacing: 0.04em;
+    color: $black;
+
+    @include mq {
+      font-size: 2.1rem;
+      text-align: center;
+    }
+  }
+
+  > .title > .red {
+    color: $accent-red;
+    background: linear-gradient(transparent 75%, $accent-yellow 75%);
+  }
+
+  > .text {
+    margin-top: 24px;
+    font-size: 1.6rem;
+    line-height: 2;
+    letter-spacing: 0.1em;
+
+    @include mq {
+      margin-top: 16px;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  }
+
+  > .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+    height: 40px;
+    margin: 30px auto 0;
+    background: $black;
+    border-radius: 20px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: 0.04em;
+
+    @include mq {
+      width: 100%;
+      max-width: 225px;
+      height: 30px;
+      margin-top: 24px;
+      font-size: 1.7rem;
+      line-height: 1.5;
+    }
+  }
+
+  > .label > .yellow {
+    color: $accent-yellow;
+  }
+
+  > .note {
+    margin-top: 20px;
+    letter-spacing: 0.1em;
+    line-height: math.div(22, 14);
+
+    @include mq {
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      line-height: math.div(48, 28);
+    }
+  }
+}
+
+.point01StepList {
+  position: relative;
+  display: flex;
+  gap: 35px;
+  margin-top: 30px;
+
+  @include mq {
+    flex-direction: column;
+  }
+
+  > .item {
+    position: relative;
+    z-index: 1;
+
+    @include mq {
+      display: flex;
+      gap: 16px;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 90px;
+        right: -35px;
+        z-index: 0;
+        width: 35px;
+        height: 1px;
+        background: $black;
+
+        @include mq {
+          content: none;
+        }
+      }
+    }
+  }
+
+  > .item > .image {
+    @include mq {
+      flex: 0 1 50%;
+    }
+  }
+
+  > .item > .step {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $accent-red;
+    text-align: center;
+    letter-spacing: 0.04em;
+
+    @include mq {
+      position: absolute;
+      top: 0;
+      left: calc(50% + 8px);
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+  }
+
+  > .item > .text {
+    margin-top: 16px;
+    line-height: math.div(24, 16);
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    @include mq {
+      flex: 0 1 50%;
+      margin-top: 20px;
+      font-size: 1.4rem;
+      text-align: left;
+    }
+  }
+}
+
+.point03Table {
+  width: 100%;
+  margin-top: 24px;
+
+  .row {
+    &:nth-child(1) {
+      > .title {
+        border-radius: 6px 0 0 0;
+      }
+    }
+
+    &:last-child {
+      > .description {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .row > .header {
+    vertical-align: middle;
+    padding: 18px;
+    border-right: 2px solid $white;
+    color: $white;
+    font-weight: 700;
+    text-align: center;
+
+    @include mq {
+      font-size: 1.4rem;
+      line-height: math.div(36, 28);
+    }
+
+    &.-red {
+      background: $accent-red;
+      border-radius: 6px 0 0 0;
+    }
+
+    &.-black {
+      background: $black;
+      border-radius: 0 6px 0 0;
+      border-right: none;
+    }
+  }
+
+  .row > .title {
+    vertical-align: middle;
+    width: 140px;
+    padding: 28px;
+    background: $bg-gray;
+    border-right: 2px solid $white;
+    border-bottom: 1px solid $white;
+    font-weight: 700;
+    text-align: center;
+    line-height: math.div(22, 16);
+
+    @include mq {
+      padding: 32px 5px;
+      font-size: 1.2rem;
+    }
+  }
+
+  .row > .description {
+    position: relative;
+    vertical-align: middle;
+    width: 42%;
+    padding: 24px 32px 24px 90px;
+    border-right: 2px solid $white;
+    border-bottom: 1px solid $white;
+    font-size: 1.4rem;
+    line-height: math.div(22, 14);
+    letter-spacing: 0.1em;
+
+    @include mq {
+      padding: 32px 7px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    &.-pink {
+      background: $bg-pink;
+    }
+
+    &.-gray {
+      background: $bg-gray;
+      border-right: none;
+    }
+  }
+
+  .row > .description > .icon {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    bottom: 0;
+    margin: auto 0;
+
+    @include mq {
+      position: initial;
+      display: block;
+      width: 30px;
+      margin: 0 auto 10px;
+    }
+
+    &.-batsu {
+      left: 36px;
+    }
+  }
+}
+
+.point04List {
+  order: 3;
+
+  @include mq {
+    margin-top: 16px;
+  }
+
+  > .item {
+    position: relative;
+    padding-left: 1.2em;
+    line-height: 2;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+
+    @include mq {
+      font-size: 1.4rem;
+      white-space: normal;
+      line-height: math.div(48, 28);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 0;
+      display: block;
+      width: 13px;
+      height: 10px;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_arrow_right_black.svg")
+        no-repeat;
+
+      @include mq {
+        top: 8px;
+      }
+    }
+  }
+}
+
+.point05Cards {
+  display: flex;
+  gap: 35px;
+  margin-top: 28px;
+
+  @include mq {
+    display: block;
+  }
+
+  .item {
+    padding-bottom: 24px;
+    background: $black;
+    border-radius: 10px;
+    text-align: center;
+
+    @include mq {
+      height: vw(600);
+      max-height: 400px;
+    }
+  }
+
+  .item > .step {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 26px;
+    margin-top: 16px;
+    background: $white;
+    border-radius: 13px;
+    color: $accent-red;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    @include mq {
+      font-size: 1.4rem;
+    }
+  }
+
+  .item > .text {
+    margin-top: 14px;
+    color: $white;
+    line-height: math.div(24, 16);
+    letter-spacing: 0.1em;
+
+    @include mq {
+      font-size: 1.4rem;
+      line-height: math.div(42, 28);
+    }
+  }
+}
+
+.point06Cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 28px;
+
+  @include mq {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  > .item {
+    position: relative;
+    flex: 1;
+    padding: 185px 14px 20px;
+    background: $bg-yellow;
+    border-radius: 10px;
+
+    @include mq {
+      flex: 1 calc(50% - 5px);
+      padding: 130px 8px 16px;
+    }
+
+    &:nth-child(2n) {
+      background: $bg-dark-yellow;
+    }
+
+    &:nth-child(1) {
+      > .image {
+        top: 20px;
+
+        @include mq {
+          top: 15px;
+          width: 110px;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      > .image {
+        @include mq {
+          width: 90px;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      > .image {
+        @include mq {
+          width: 113px;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      > .image {
+        top: 43px;
+
+        @include mq {
+          top: 35px;
+          width: 108px;
+        }
+      }
+    }
+  }
+
+  > .item > .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  > .item > .label {
+    color: $accent-red;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    @include mq {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.point06Description {
+  margin-top: 16px;
+  text-align: center;
+
+  > .title {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 26px;
+    padding: 0 12px;
+    background: $bg-cream;
+    border-radius: 13px;
+    font-size: 1.3rem;
+
+    @include mq {
+      height: auto;
+      padding: 6px 8px;
+      font-size: 1.2rem;
+      line-height: math.div(32, 24);
+    }
+  }
+
+  > .text {
+    margin-top: 12px;
+    font-size: 1.4rem;
+    line-height: math.div(22, 14);
+    letter-spacing: 0.1em;
+
+    @include mq {
+      margin-top: 8px;
+      font-size: 1.2rem;
+    }
+
+    + .title {
+      margin-top: 12px;
+
+      @include mq {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.point06More {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 30px;
+  padding: 16px 30px;
+  background: $bg-cream;
+  border-radius: 10px;
+
+  @include mq {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  > .text {
+    position: relative;
+    width: 380px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    color: $accent-red;
+    line-height: math.div(36, 24);
+    letter-spacing: 0.04em;
+
+    @include mq {
+      width: 100%;
+      font-size: 1.7rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 38px;
+      height: 71px;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/image_point06_line.svg")
+        no-repeat center/contain;
+
+      @include mq {
+        top: -10px;
+        transform: scale(0.7);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 38px;
+      height: 71px;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/image_point06_line.svg")
+        no-repeat center/contain;
+      transform: rotateZ(45deg);
+
+      @include mq {
+        top: -10px;
+        transform: rotateZ(45deg) scale(0.7);
+      }
+    }
+  }
+}

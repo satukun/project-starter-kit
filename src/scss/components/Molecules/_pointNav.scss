@@ -1,0 +1,190 @@
+.pointNav {
+  position: relative;
+  z-index: 1;
+  max-width: $inner-width;
+  margin: 40px auto 0;
+
+  @include mq {
+    margin-top: 30px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -133px;
+    left: 40px;
+    width: 118px;
+    height: 133px;
+    background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/image_printer_illust.webp")
+      no-repeat center/contain;
+
+    @include mq {
+      top: -67px;
+      left: 20px;
+      width: 59px;
+      height: 67px;
+    }
+  }
+}
+
+.pointList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+
+  @include mq {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  > .item {
+    flex: 0 1 324px;
+    height: 70px;
+    background: $white;
+    border: 1px solid $border-gray;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: background 0.2s;
+
+    @include mq(lg) {
+      &:hover {
+        background: $button-white-hover;
+      }
+    }
+
+    @include mq {
+      flex: 1 calc(50% - 5px);
+      height: 80px;
+      border-radius: 10px;
+    }
+  }
+
+  > .item > .link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    height: 100%;
+    padding: 0 15px 0 19px;
+    font-size: 1.5rem;
+    color: $accent-red;
+    text-decoration: none;
+    line-height: math.div(24, 16);
+
+    @include mq {
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      padding: 0;
+      font-size: 1.1rem;
+      line-height: 1.25;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 38px;
+      height: 38px;
+
+      @include mq {
+        width: 52px;
+        height: 9px;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 11px;
+      height: 7px;
+      margin-left: auto;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_arrow_down_red.svg")
+        no-repeat center/contain;
+
+      @include mq {
+        position: absolute;
+        bottom: -11px;
+        width: 22px;
+        height: 22px;
+        background: $accent-red
+          url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_arrow_down_white.svg")
+          no-repeat center top 4px/7px auto;
+        border-radius: 50%;
+      }
+    }
+
+    &.-link01 {
+      &::before {
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/text_point_01.svg")
+          no-repeat center/contain;
+
+        @include mq {
+          background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/text_point_01.svg")
+            no-repeat center/contain;
+        }
+      }
+    }
+
+    &.-link02 {
+      &::before {
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/text_point_02.svg")
+          no-repeat center/contain;
+
+        @include mq {
+          background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/text_point_02.svg")
+            no-repeat center/contain;
+        }
+      }
+    }
+
+    &.-link03 {
+      &::before {
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/text_point_03.svg")
+          no-repeat center/contain;
+
+        @include mq {
+          background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/text_point_03.svg")
+            no-repeat center/contain;
+        }
+      }
+    }
+
+    &.-link04 {
+      &::before {
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/text_point_04.svg")
+          no-repeat center/contain;
+
+        @include mq {
+          background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/text_point_04.svg")
+            no-repeat center/contain;
+        }
+      }
+    }
+
+    &.-link05 {
+      &::before {
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/text_point_05.svg")
+          no-repeat center/contain;
+
+        @include mq {
+          background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/text_point_05.svg")
+            no-repeat center/contain;
+        }
+      }
+    }
+
+    &.-link06 {
+      &::before {
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/text_point_06.svg")
+          no-repeat center/contain;
+
+        @include mq {
+          background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/text_point_06.svg")
+            no-repeat center/contain;
+        }
+      }
+    }
+  }
+}

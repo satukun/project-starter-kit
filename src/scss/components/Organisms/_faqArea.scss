@@ -1,0 +1,41 @@
+.faqArea {
+  padding: 100px 0 150px;
+
+  @include mq {
+    padding: 50px 0 160px;
+  }
+
+  > .title {
+    text-align: center;
+
+    @include mq {
+      width: 189px;
+      margin: 0 auto;
+    }
+  }
+
+  > .button {
+    display: block;
+    margin-top: 60px;
+    text-align: center;
+
+    @include mq {
+      max-width: 385px;
+      padding: 0 20px;
+      margin: 30px auto 0;
+    }
+  }
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: $inner-width;
+  margin: 38px auto 0;
+
+  @include mq {
+    padding: 0 20px;
+    margin-top: 24px;
+  }
+}

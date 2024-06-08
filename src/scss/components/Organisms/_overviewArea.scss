@@ -1,0 +1,107 @@
+.overviewArea {
+  position: relative;
+  width: 900px;
+  padding: 130px 0 240px;
+  margin: 0 auto;
+
+  @include mq {
+    width: 100%;
+    padding: 90px 20px 78px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 75px * 0.9;
+    right: 350px * 0.9;
+    z-index: -2;
+    width: 877px * 0.9;
+    height: 612px * 0.9;
+    background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_overview_base.webp")
+      no-repeat center/contain;
+    animation: 6s fluffy infinite;
+
+    @include mq {
+      top: 35px;
+      right: 0;
+      width: 100%;
+      height: vw(1259);
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_overview_base.webp")
+        no-repeat center top/contain;
+    }
+  }
+
+  > .title {
+    @include mq {
+      width: 326px;
+      margin: 0 auto;
+    }
+  }
+
+  > .container {
+    position: relative;
+    margin-top: 44px;
+
+    @include mq {
+      width: 345px;
+      margin: 20px auto 0;
+    }
+  }
+
+  > .container > .text {
+    @include mq {
+      width: 303px;
+    }
+  }
+
+  > .container > .image {
+    position: absolute;
+    top: 0;
+    right: -15px;
+
+    @include mq {
+      position: initial;
+      width: 325px;
+      margin-top: 42px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: 100px;
+      width: 70px * 0.9;
+      height: 67px * 0.9;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/image_overview_dot_2.webp")
+        no-repeat center/contain;
+      animation: 4s fluffyDots infinite;
+
+      @include mq {
+        width: 43px;
+        height: 31px;
+        top: -5px;
+        right: 70px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100px;
+      right: 40px;
+      z-index: -1;
+      width: 139px * 0.9;
+      height: 139px * 0.9;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/image_overview_dot_1.webp")
+        no-repeat center/contain;
+      animation: fluidrotate 100s ease 0s infinite;
+
+      @include mq {
+        width: 76px;
+        height: 76px;
+        top: 35px;
+        right: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.caseStudyContainer {
+  padding: 90px 58px 60px;
+  border: 2px solid $black;
+  border-radius: 12px;
+  background: $white;
+
+  @include mq {
+    padding: 30px 18px 30px;
+    overflow: hidden;
+  }
+}
+
+.caseStudyTopBlock {
+  display: flex;
+  align-items: center;
+  gap: 65px;
+
+  @include mq {
+    display: block;
+  }
+
+  > .inner > .title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: math.div(42, 30);
+    letter-spacing: 0.04em;
+    color: $black;
+
+    @include mq {
+      font-size: 1.7rem;
+    }
+  }
+
+  > .inner > .name {
+    margin-top: 18px;
+    color: $accent-red;
+    font-weight: 700;
+
+    @include mq {
+      margin-top: 13px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.caseStudyList {
+  margin-top: 30px;
+
+  @include mq {
+    margin-top: 15px;
+  }
+
+  > .item {
+    position: relative;
+    padding: 26px 0 0 1em;
+    background: linear-gradient(
+        to right,
+        $black,
+        $black 4px,
+        transparent 4px,
+        transparent 10px
+      )
+      repeat-x left top/10px 4px;
+    line-height: 2;
+    letter-spacing: 0.12em;
+
+    @include mq {
+      padding-top: 13px;
+      font-size: 1.4rem;
+      line-height: math.div(48, 28);
+      letter-spacing: 0.1em;
+    }
+
+    &::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+    }
+
+    &:last-child {
+      padding: 0 0 26px 1em;
+      background: linear-gradient(
+          to right,
+          $black,
+          $black 4px,
+          transparent 4px,
+          transparent 10px
+        )
+        repeat-x left bottom/10px 4px;
+
+      @include mq {
+        background: none;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.caseStudyImages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include mq {
+    display: block;
+    margin-top: 15px;
+  }
+}
+
+.caseStudyTextBlock {
+  > .text {
+    display: none;
+    padding: 32px 30px 30px;
+    margin-top: 32px;
+    background: $bg-cream;
+    border-radius: 12px;
+    font-size: 1.6rem;
+    line-height: math.div(32, 16);
+    letter-spacing: 0.1em;
+
+    @include mq {
+      padding: 20px;
+      margin-top: 20px;
+      font-size: 1.4rem;
+      line-height: math.div(48, 28);
+      letter-spacing: 0.16em;
+    }
+  }
+
+  > .button {
+    display: block;
+    margin-top: 32px;
+    text-align: center;
+
+    @include mq {
+      margin-top: 22px;
+    }
+  }
+}

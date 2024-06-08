@@ -1,0 +1,191 @@
+.mainVisualArea {
+  position: relative;
+
+  > .inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-template-rows: 370px 1fr;
+    gap: 30px 127px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @include mq {
+      display: block;
+      padding: 70px 20px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 160px * 0.9;
+      z-index: -2;
+      width: 1172px * 0.9;
+      height: 566px * 0.9;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_mainvisual_base.webp")
+        no-repeat center/contain;
+      animation: 7s fluffy infinite;
+
+      @include mq {
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: vw(1041);
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_mainvisual_base.webp")
+          no-repeat center/contain;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 80px * 0.9;
+      right: -80px * 0.9;
+      z-index: -1;
+      width: 579px * 0.9;
+      height: 315px;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_mainvisual_dots.webp")
+        no-repeat center/contain;
+      animation: 5s fluffyDots infinite;
+
+      @include mq {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: vw(750);
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_mainvisual_dots.webp")
+          no-repeat center/contain;
+      }
+    }
+  }
+
+  > .inner > .title {
+    grid-area: 1 / 1 / 2 / 2;
+    align-self: flex-end;
+    transform: scale(0);
+
+    .is-loaded & {
+      animation: popOut 0.45s forwards;
+      animation-delay: 0.7s;
+    }
+
+    @include mq {
+      position: relative;
+      z-index: 2;
+      width: vw(447);
+      margin: 0 auto;
+    }
+  }
+
+  > .inner > .image {
+    grid-area: 1 / 2 / 3 / 3;
+    position: relative;
+    top: -10px;
+    z-index: 1;
+    transform: scale(0);
+
+    .is-loaded & {
+      animation: popOut 0.4s ease-out forwards;
+      animation-delay: 0.85s;
+    }
+
+    @include mq {
+      top: 0;
+      width: vw(664);
+      margin: -20px 0 0 -10px;
+    }
+  }
+
+  > .inner > .button {
+    grid-area: 2 / 1 / 3 / 2;
+    transform: scale(0);
+    padding: 0;
+    text-align: left;
+
+    .is-loaded & {
+      animation: popOut 0.35s forwards;
+      animation-delay: 1s;
+    }
+
+    @include mq {
+      width: 100%;
+      max-width: 385px;
+      margin: 15px auto 0;
+    }
+
+    > .linkButton {
+      height: 70px;
+    }
+  }
+}
+
+.mainVisualDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: $inner-width;
+  margin: 0 auto;
+
+  @include mq {
+    width: 100%;
+  }
+
+  > .image {
+    position: absolute;
+
+    &.-first {
+      top: 120px * 0.9;
+      left: -60px;
+      animation: fluidrotate 90s ease 0s infinite;
+
+      @include mq {
+        width: 68px;
+        height: 68px;
+        top: vw(900);
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+
+    &.-second {
+      top: 210px;
+      left: -250px;
+      animation: fluidrotate 110s ease 0s infinite;
+
+      @include mq {
+        display: none;
+      }
+    }
+
+    &.-third {
+      top: 440px * 0.9;
+      left: -140px;
+      animation: fluidrotate 130s ease 0s infinite;
+
+      @include mq {
+        width: 68px;
+        height: 68px;
+        top: vw(1030);
+        left: -10px;
+      }
+    }
+
+    &.-forth {
+      top: 520px * 0.9;
+      left: 670px;
+      animation: fluidrotate 80s ease 0s infinite;
+
+      @include mq {
+        width: 119px;
+        height: 119px;
+        top: vw(1040);
+        left: auto;
+        right: -30px;
+      }
+    }
+  }
+}

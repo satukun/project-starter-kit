@@ -1,0 +1,134 @@
+.floatingNav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 920px;
+  height: 64px;
+  margin: 0 auto;
+  background: $white;
+  border: 2px solid $accent-red;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  @include mq {
+    width: 100%;
+    height: 76px;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+  }
+
+  &.is-fixed {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  &.is-hide {
+    bottom: -100px;
+    transition: bottom 0.4s 1s;
+  }
+
+  &.is-show {
+    bottom: 0;
+  }
+}
+
+.floatingNavList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  > .item {
+    @include mq {
+      flex: 1;
+      height: 100%;
+    }
+
+    + .item {
+      border-left: 1px solid $border-light-gray;
+    }
+  }
+
+  > .item > .link {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 1.6rem;
+    color: $accent-red;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+
+    @include mq {
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+      height: 100%;
+      padding: 8px 0 0;
+      font-size: 1rem;
+      text-align: center;
+      line-height: math.div(14, 10);
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 31px;
+      height: 31px;
+    }
+
+    &.-link01 {
+      padding-left: 0;
+
+      &::before {
+        height: 27px;
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_printer.svg")
+          no-repeat center/contain;
+      }
+    }
+
+    &.-link02 {
+      &::before {
+        width: 36px;
+        height: 27px;
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_casestudy.svg")
+          no-repeat center/contain;
+      }
+    }
+
+    &.-link03 {
+      @include mq {
+        gap: 7px;
+      }
+
+      &::before {
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_info.svg")
+          no-repeat center/contain;
+
+        @include mq {
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    &.-link04 {
+      padding-right: 0;
+
+      &::before {
+        width: 34px;
+        height: 29px;
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_faq.svg")
+          no-repeat center/contain;
+      }
+    }
+  }
+}

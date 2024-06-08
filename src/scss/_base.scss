@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  min-width: $base-width;
+  background: $white;
+  color: $black;
+  line-height: 1;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+    "メイリオ", "Meiryo", "Osaka", "ＭＳ Ｐゴシック", "MS P Gothic", Verdana,
+    Arial, Helvetica, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+  position: relative;
+
+  @include mq {
+    min-width: auto;
+  }
+}
+
+a {
+  color: $black;
+
+  &:visited {
+    color: $black;
+  }
+
+  @include mq(lg) {
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+      text-decoration: none;
+    }
+  }
+}
+
+img {
+  @include mq {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+dl {
+  dt,
+  dd {
+    margin: 0;
+  }
+}
+
+@include mq(lg) {
+  .nopc {
+    display: none;
+  }
+}
+
+@include mq {
+  .nosp {
+    display: none;
+  }
+}
+
+/* トップに戻るボタンの位置調整 */
+#contents {
+  position: relative;
+}
+
+.cp-PageTop {
+  @include mq {
+    bottom: 90px;
+    right: 10px;
+  }
+
+  &.is-footerSticky {
+    position: absolute;
+    bottom: 185px;
+
+    @include mq {
+      bottom: 260px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "daiwa",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.77.4",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "dart-sass": "^1.25.0",
+    "gsap": "^3.12.5",
+    "intersection-observer": "^0.12.2",
+    "jquery": "^3.7.1",
+    "micromodal": "^0.4.10",
+    "slick": "^1.12.2",
+    "validate.js": "^0.13.1"
+  }
+}

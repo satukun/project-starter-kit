@@ -1,0 +1,216 @@
+.faqBlock {
+  position: relative;
+  padding: 30px;
+  background: $bg-gray;
+  border-radius: 10px;
+
+  @include mq {
+    padding: 26px 20px;
+  }
+
+  > .question {
+    cursor: pointer;
+    position: relative;
+    padding-left: 4em;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: math.div(48, 18);
+
+    @include mq {
+      padding-left: 3em;
+      padding-right: 20px;
+      font-size: 1.4rem;
+      line-height: math.div(48, 28);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 46px;
+      height: 46px;
+      margin-right: 16px;
+      background: $accent-blue
+        url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/text_q.svg")
+        no-repeat center;
+      border-radius: 50%;
+
+      @include mq {
+        bottom: 0;
+        width: 30px;
+        height: 30px;
+        margin: auto 0;
+        font-size: 1.2rem;
+        background-size: auto 12px;
+      }
+    }
+  }
+
+  > .question > .text {
+    position: relative;
+    display: block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 10px;
+      bottom: 0;
+      margin: auto 0;
+      display: block;
+      width: 2px;
+      height: 16px;
+      background: $accent-red;
+      transition: all 0.2s;
+
+      @include mq {
+        right: -10px;
+        height: 14px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 3px;
+      bottom: 0;
+      margin: auto 0;
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: $accent-red;
+      transition: all 0.2s;
+
+      @include mq {
+        right: -16px;
+        width: 14px;
+      }
+    }
+
+    &.is-open {
+      &::before {
+        transform: rotate(90deg);
+      }
+
+      &::after {
+        opacity: 0;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  > .answer {
+    display: none;
+    position: relative;
+    padding: 30px 0 0 4em;
+    margin-top: 26px;
+    border-top: 4px dotted $black;
+    font-size: 1.6rem;
+    line-height: 2;
+    letter-spacing: 0.1em;
+
+    @include mq {
+      padding-left: 3em;
+      border-width: 3px;
+      font-size: 1.4rem;
+      line-height: math.div(48, 28);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 0;
+      display: inline-block;
+      width: 46px;
+      height: 46px;
+      margin-right: 16px;
+      background: $accent-red
+        url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/text_a.svg")
+        no-repeat left 52% center;
+      border-radius: 50%;
+
+      @include mq {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+        background-size: auto 12px;
+        background-position: left 56% center;
+      }
+    }
+  }
+
+  > .answer > .strong {
+    font-weight: 700;
+  }
+
+  > .answer > .small {
+    font-size: 1.4rem;
+
+    @include mq {
+      font-size: 1.2rem;
+    }
+  }
+
+  > .answer > .link {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      margin-left: 0.5em;
+      vertical-align: -0.1em;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/icon_arrow_right_red.svg")
+        no-repeat center/ contain;
+    }
+  }
+}
+
+.materialsList {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 20px;
+
+  @include mq {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 16px 0;
+  }
+
+  > .item {
+    font-size: 1.4rem;
+    text-align: center;
+
+    @include mq {
+      flex: 1 calc(100% / 3 - 10px);
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.textList {
+  > .item {
+    position: relative;
+    padding-left: 1em;
+    letter-spacing: 0.08em;
+
+    @include mq {
+      font-size: 1.4rem;
+      line-height: math.div(48, 28);
+    }
+
+    &::before {
+      content: "・";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      margin-right: 1em;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.carouselSp {
+  @include mq {
+    position: relative;
+
+    .item {
+      width: vw(500);
+      margin-right: 15px;
+    }
+
+    .slick-list {
+      overflow: visible;
+    }
+
+    .slick-dots {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+
+      > li {
+        > button {
+          cursor: pointer;
+          width: 8px;
+          height: 8px;
+          padding: 0;
+          border: none;
+          border-radius: 50%;
+          text-indent: 200%;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        &.slick-active {
+          > button {
+            background: $accent-red;
+          }
+        }
+      }
+    }
+  }
+}

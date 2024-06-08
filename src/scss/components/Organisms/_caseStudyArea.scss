@@ -1,0 +1,160 @@
+.caseStudyArea {
+  position: relative;
+  overflow: hidden;
+  background: $bg-yellow;
+  padding: 100px 0;
+
+  @include mq {
+    padding: 50px 0;
+    overflow: initial;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -340px;
+    left: 0;
+    z-index: 0;
+    width: 969px;
+    height: 1032px;
+    background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_casestudy_base.webp")
+      no-repeat center/contain;
+    animation: 5s fluffy infinite;
+
+    @include mq {
+      top: -30px;
+      left: -25px;
+      width: 100%;
+      height: vw(690);
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_casestudy_base.webp")
+        no-repeat center/contain;
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 80px;
+    right: 370px;
+    left: 0;
+    z-index: 0;
+    width: 838px;
+    height: 326px;
+    margin: 0 auto;
+    background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_casestudy_dots.webp")
+      no-repeat center/contain;
+    animation: 5s fluffyDots infinite;
+
+    @include mq {
+      top: 55px;
+      right: 0;
+      left: -18px;
+      width: 100%;
+      height: vw(134);
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_casestudy_dots.webp")
+        no-repeat center/contain;
+    }
+  }
+
+  > .title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+    @include mq {
+      width: 220px;
+      margin: 0 auto;
+    }
+  }
+
+  > .text {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    text-align: center;
+    line-height: 2;
+    letter-spacing: 0.1em;
+
+    @include mq {
+      margin-top: 24px;
+      font-size: 1.4rem;
+      letter-spacing: 0.16em;
+    }
+  }
+
+  > .inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: $inner-width;
+    margin: 42px auto 0;
+
+    @include mq {
+      padding: 0 20px;
+      margin-top: 22px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -340px;
+      right: -60px;
+      width: 300px;
+      height: 293px;
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/image_casestudy_illust.webp")
+        no-repeat center/contain;
+      animation: 7s fluffyDots infinite;
+
+      @include mq {
+        top: -310px;
+        right: 0;
+        z-index: 2;
+        width: 114px;
+        height: 112px;
+      }
+    }
+  }
+}
+
+.caseStudyDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  width: $inner-width;
+  margin: 0 auto;
+
+  @include mq {
+    width: 100%;
+  }
+
+  > .image {
+    position: absolute;
+
+    &.-first {
+      top: 130px;
+      left: -30px;
+      animation: fluidrotate 90s ease 0s infinite;
+
+      @include mq {
+        display: none;
+      }
+    }
+
+    &.-second {
+      top: 280px;
+      right: -100px;
+      animation: fluidrotate 120s ease 0s infinite;
+
+      @include mq {
+        top: 250px;
+        right: -20px;
+        width: 85px;
+        height: 85px;
+      }
+    }
+  }
+}

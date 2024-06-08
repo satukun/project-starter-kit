@@ -1,0 +1,292 @@
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 84px 160px 334px;
+  gap: 30px;
+  max-width: $inner-width;
+  margin: 80px auto 0;
+
+  @include mq {
+    display: block;
+    padding: 0 20px;
+    margin-top: 28px;
+  }
+}
+
+.productTopBlock {
+  grid-area: 1 / 1 / 2 / 3;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @include mq {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  > .title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: math.div(42, 30);
+    letter-spacing: 0.04em;
+    color: $black;
+
+    @include mq {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.productPrice {
+  @include mq {
+    text-align: center;
+  }
+
+  > .text {
+    line-height: 2;
+    letter-spacing: 0.1em;
+
+    @include mq {
+      font-size: 1.4rem;
+      line-height: math.div(48, 28);
+      letter-spacing: 0.16em;
+    }
+  }
+
+  > .price {
+    margin-top: 8px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: $accent-red;
+
+    @include mq {
+      margin-top: 12px;
+      font-size: 2.4rem;
+    }
+  }
+
+  > .price > .small {
+    font-size: 2.4rem;
+    font-weight: 700;
+
+    @include mq {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.productBlock {
+  padding: 32px 40px;
+  background: $white;
+  border-radius: 10px;
+  text-align: center;
+
+  @include mq {
+    padding: 30px 20px;
+    margin-top: 20px;
+  }
+
+  > .title {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 190px;
+    height: 36px;
+    padding: 0 36px;
+    background: $black;
+    border-radius: 18px;
+    font-size: 1.8rem;
+    color: $white;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    @include mq {
+      min-width: 146px;
+      height: 30px;
+      padding: 0 15px;
+      font-size: 1.7rem;
+    }
+  }
+
+  > .item {
+    letter-spacing: 0.1em;
+  }
+
+  > .item > .strong {
+    margin-right: 2em;
+    font-weight: 700;
+
+    &::before {
+      content: "●";
+      font-size: 1rem;
+      vertical-align: 0.2em;
+      margin-right: 0.5em;
+    }
+  }
+
+  &.-price {
+    grid-area: 2 / 1 / 3 / 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 40px;
+    margin-top: 5px;
+
+    @include mq {
+      display: none;
+    }
+
+    > .item {
+      &.-last {
+        margin-left: 0.6em;
+
+        > .strong {
+          margin-right: 2.4em;
+        }
+      }
+    }
+
+    > .note {
+      margin-top: -5px;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &.-priceSp {
+    text-align: left;
+
+    @include mq(lg) {
+      display: none;
+    }
+
+    > .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0 19px;
+      background: linear-gradient(
+          to right,
+          $black,
+          $black 3px,
+          transparent 3px,
+          transparent 10px
+        )
+        repeat-x left bottom/10px 3px;
+      font-size: 1.4rem;
+      line-height: math.div(48, 28);
+      letter-spacing: 0.08em;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+        background: none;
+      }
+    }
+
+    > .item > .strong {
+      padding-left: 1em;
+      margin-right: 0;
+      text-indent: -1em;
+    }
+
+    > .item > .price {
+      text-align: right;
+    }
+
+    > .note {
+      font-size: 1.4rem;
+      margin-top: 22px;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &.-maintenance {
+    grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 28px;
+
+    @include mq {
+      gap: 18px;
+    }
+
+    > .red {
+      margin-top: 2px;
+      font-size: 3rem;
+      font-weight: 700;
+      color: $accent-red;
+      letter-spacing: 0.04em;
+
+      @include mq {
+        margin-top: 0;
+        font-size: 2.4rem;
+      }
+    }
+
+    > .note {
+      line-height: math.div(24, 16);
+      letter-spacing: 0.1em;
+
+      @include mq {
+        font-size: 1.4rem;
+        line-height: math.div(48, 28);
+        letter-spacing: 0.16em;
+      }
+    }
+  }
+
+  &.-cost {
+    grid-area: 3 / 2 / 4 / 3;
+
+    > .item {
+      line-height: math.div(24, 16);
+
+      @include mq {
+        font-size: 1.4rem;
+        line-height: math.div(48, 28);
+        letter-spacing: 0.08em;
+      }
+
+      &:nth-of-type(1) {
+        padding-bottom: 24px;
+        margin-top: 28px;
+
+        @include mq {
+          padding-bottom: 20px;
+          margin-top: 20px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        padding-top: 24px;
+        background: linear-gradient(
+            to right,
+            $black,
+            $black 4px,
+            transparent 4px,
+            transparent 10px
+          )
+          repeat-x left top/10px 4px;
+
+        @include mq {
+          padding-top: 20px;
+          background: linear-gradient(
+              to right,
+              $black,
+              $black 3px,
+              transparent 3px,
+              transparent 10px
+            )
+            repeat-x left top/10px 3px;
+        }
+      }
+    }
+
+    > .item > .strong {
+      margin-right: 0;
+    }
+  }
+}

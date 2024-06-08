@@ -1,0 +1,17 @@
+// breakpoint
+$breakpoints: (
+  "lg": "screen and (min-width: 641px)",
+  "sm": "screen and (max-width: 640px)",
+) !default;
+
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// px -> vw
+@function vw($size, $viewport: 750) {
+  $rate: calc(100 / $viewport);
+  @return $rate * $size * 1vw;
+}

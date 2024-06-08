@@ -1,0 +1,51 @@
+.footerArea {
+  padding: 60px;
+  background: $black;
+  color: $white;
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  @include mq {
+    padding: 50px 0 80px;
+  }
+
+  > .copyright {
+    margin-top: 24px;
+
+    @include mq {
+      margin-top: 14px;
+    }
+  }
+
+  > .copyright > .small {
+    font-size: 1.4rem;
+
+    @include mq {
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+
+  > .item {
+    padding: 0 10px;
+
+    + .item {
+      border-left: 1px solid currentColor;
+    }
+  }
+
+  > .item > .link {
+    color: $white;
+    text-decoration: none;
+
+    @include mq {
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+    }
+  }
+}

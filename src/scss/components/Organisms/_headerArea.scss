@@ -1,0 +1,28 @@
+.headerArea {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 30px 35px 0;
+
+  @include mq {
+    padding: 18px 20px 0;
+
+    > .logo {
+      width: 93px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: 0;
+        z-index: -1;
+        display: block;
+        width: 160px;
+        height: 76px;
+        background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_header.webp")
+          no-repeat center/contain;
+      }
+    }
+  }
+}

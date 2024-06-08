@@ -1,0 +1,126 @@
+.printerArea {
+  position: relative;
+  padding: 100px 0;
+  background: $bg-cream;
+  overflow: hidden;
+
+  @include mq {
+    z-index: 2;
+    padding: 50px 0;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -350px;
+    right: 0;
+    z-index: 0;
+    width: 886px;
+    height: 1032px;
+    background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_printer_base.webp")
+      no-repeat center/contain;
+    animation: 3s fluffy infinite;
+
+    @include mq {
+      top: -65px;
+      right: -70px;
+      width: 100%;
+      height: vw(782);
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_printer_base.webp")
+        no-repeat center/contain;
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 95px;
+    right: -175px;
+    left: 0;
+    z-index: 0;
+    width: 1031px;
+    height: 206px;
+    margin: 0 auto;
+    background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/bg_printer_dots.webp")
+      no-repeat center/contain;
+    animation: 5s fluffyDots infinite;
+
+    @include mq {
+      top: 26px;
+      right: 0;
+      width: 100%;
+      height: vw(177);
+      background: url("/-/Media/Ricoh/Sites/co_jp/garment/special/ri100-loyalty/img/sp/bg_printer_dots.webp")
+        no-repeat center/contain;
+    }
+  }
+
+  > .title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    @include mq {
+      width: 193px;
+      margin: 0 auto;
+    }
+  }
+
+  > .inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: $inner-width;
+    margin: 60px auto 0;
+
+    @include mq {
+      padding: 0 20px;
+      margin-top: 30px;
+    }
+  }
+}
+
+.printerDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: $inner-width;
+  margin: 0 auto;
+
+  @include mq {
+    width: 100%;
+  }
+
+  > .image {
+    position: absolute;
+
+    &.-first {
+      top: 210px;
+      left: -70px;
+      animation: fluidrotate 90s ease 0s infinite;
+
+      @include mq {
+        top: 140px;
+        left: -15px;
+        width: 57px;
+        height: 57px;
+      }
+    }
+
+    &.-second {
+      top: 110px;
+      right: 100px;
+      animation: fluidrotate 120s ease 0s infinite;
+
+      @include mq {
+        top: 155px;
+        right: 30px;
+        width: 65px;
+        height: 65px;
+      }
+    }
+  }
+}
